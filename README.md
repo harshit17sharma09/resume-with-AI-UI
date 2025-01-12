@@ -1,36 +1,110 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# AI Resume Chatbot
+
+An intelligent chatbot that analyzes resumes and provides personalized feedback using AI. Built with Next.js, FastAPI, and OpenAI's GPT-4.
+
+## Architecture
+```mermaid
+graph TD
+    A[Client/Next.js Frontend] --> B[FastAPI Backend]
+    B --> C[OpenAI API]
+    B --> D[(Database)]
+    
+    subgraph Frontend
+        A1[Resume Upload] --> A2[PDF Viewer]
+        A2 --> A3[Chat Interface]
+    end
+    
+    subgraph Backend
+        B1[Authentication] --> B2[Resume Processing]
+        B2 --> B3[Chat Handler]
+        B3 --> B4[Context Management]
+    end
+```
+
+## Features
+
+- 📄 PDF Resume Upload & Preview
+- 💬 Real-time Chat Interface
+- 🤖 AI-powered Resume Analysis
+- 🔒 Secure Authentication
+- 💡 Smart Suggestions
+- 🎯 Contextual Feedback
+
+## Screenshots
+
+### Home Page
+![Home Page](screenshots/home.png)
+*Landing page with resume upload functionality*
+
+### Chat Interface
+![Chat Interface](screenshots/chat.png)
+*Split view with PDF preview and chat interface*
+
+## Tech Stack
+
+- **Frontend**
+  - Next.js 14
+  - React
+  - TailwindCSS
+  - NextAuth.js
+
+- **Backend**
+  - FastAPI
+  - OpenAI API
+  - PostgreSQL
+  - Redis (for caching)
 
 ## Getting Started
 
-First, run the development server:
+1. **Clone the repository**
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+2. **Install dependencies**
+
+3. **Set up environment variables**
+
+4. **Run the development servers**
+
+## API Endpoints
+
+| Endpoint | Method | Description |
+|----------|---------|------------|
+| `/chat` | POST | Send message to chatbot |
+| `/upload` | POST | Upload resume file |
+| `/auth/token` | POST | Get authentication token |
+
+## Project Structure
+```
+resume-chatbot/
+├── frontend/
+│   ├── src/
+│   │   ├── app/
+│   │   │   ├── components/
+│   │   │   ├── page.js
+│   │   │   └── layout.js
+│   │   └── styles/
+│   └── public/
+└── backend/
+    ├── app/
+    │   ├── routes/
+    │   ├── models/
+    │   └── services/
+    └── main.py
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Contributing
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## License
 
-## Learn More
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-To learn more about Next.js, take a look at the following resources:
+## Acknowledgments
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- OpenAI for GPT-4 API
+- Next.js team for the amazing framework
+- FastAPI team for the efficient backend framework
