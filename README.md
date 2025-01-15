@@ -33,11 +33,11 @@ graph TD
 ## Screenshots
 
 ### Home Page
-![Home Page](screenshots/home.png)
+![Home Page](/public/images/screenshots/home.png)
 *Landing page with resume upload functionality*
 
 ### Chat Interface
-![Chat Interface](screenshots/chat.png)
+![Chat Interface](/public/images/screenshots/chat.png)
 *Split view with PDF preview and chat interface*
 
 ## Tech Stack
@@ -45,14 +45,12 @@ graph TD
 - **Frontend**
   - Next.js 14
   - React
-  - TailwindCSS
   - NextAuth.js
 
 - **Backend**
   - FastAPI
   - OpenAI API
-  - PostgreSQL
-  - Redis (for caching)
+  - Firebase database
 
 ## Getting Started
 
